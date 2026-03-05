@@ -192,22 +192,22 @@ import Layout from '../layouts/Layout.astro';
 				<div class="about-values reveal reveal-delay-4">
 					<div class="value-card">
 						<div class="value-icon">🏆</div>
-						<h4>Clinical Excellence</h4>
+						<h3>Clinical Excellence</h3>
 						<p>3D digital technology for precise diagnostics and error-free treatments.</p>
 					</div>
 					<div class="value-card">
 						<div class="value-icon">💚</div>
-						<h4>Human Warmth</h4>
+						<h3>Human Warmth</h3>
 						<p>A calm environment where every patient feels at home from the very first moment.</p>
 					</div>
 					<div class="value-card">
 						<div class="value-icon">🔒</div>
-						<h4>Total Safety</h4>
+						<h3>Total Safety</h3>
 						<p>Certified sterilization protocols and top-quality materials.</p>
 					</div>
 					<div class="value-card">
 						<div class="value-icon">💰</div>
-						<h4>Accessibility</h4>
+						<h3>Accessibility</h3>
 						<p>Flexible payment plans so cost is never an obstacle.</p>
 					</div>
 				</div>
@@ -433,26 +433,26 @@ import Layout from '../layouts/Layout.astro';
 				<h3>Book an appointment</h3>
 				<div class="form-row">
 					<div class="form-group">
-						<label>First Name</label>
-						<input type="text" placeholder="Your first name" />
+						<label for="firstname">First Name</label>
+						<input type="text"  id="firstname" name="firstname" placeholder="Your first name" />
 					</div>
 					<div class="form-group">
-						<label>Last Name</label>
-						<input type="text" placeholder="Your last name" />
+						<label for="lastname">Last Name</label>
+						<input type="text"  id="lastname"  name="lastname" placeholder="Your last name" />
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group">
-						<label>Phone</label>
-						<input type="tel" placeholder="+54 351 ..." />
+						<label for="phone">Phone</label>
+						<input type="tel" id="phone" name="phone" placeholder="+54 351 ..." />
 					</div>
 					<div class="form-group">
-						<label>Email</label>
-						<input type="email" placeholder="you@email.com" />
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" placeholder="you@email.com" />
 					</div>
 				</div>
 				<div class="form-group">
-					<label>Treatment of interest</label>
+					<label for="treatment">Treatment of interest</label>
 					<select>
 						<option value="">Select a treatment</option>
 						<option>Teeth Whitening</option>
@@ -465,8 +465,8 @@ import Layout from '../layouts/Layout.astro';
 					</select>
 				</div>
 				<div class="form-group">
-					<label>Message (optional)</label>
-					<textarea placeholder="Briefly tell us what you need..."></textarea>
+					<label for="message">Message (optional)</label>
+					<textarea id="message" name="message" placeholder="Briefly tell us what you need..."></textarea>
 				</div>
 				<button class="form-submit" onclick="handleSubmit(this)">
 					<span>Send Request</span>
@@ -482,7 +482,7 @@ import Layout from '../layouts/Layout.astro';
 		<div class="footer-inner">
 			<div class="footer-top">
 				<div class="footer-brand">
-					<a href="#inicio" class="nav-logo">Dental<span style="color:var(--sage-lt)">Pure</span></a>
+					<a href="#inicio" class="nav-logo">Dental<span style="color:rgba(247,244,239,0.6)">Pure</span></a>
 					<p>Transforming smiles with clinical excellence and human warmth since 2009 in Córdoba, Argentina.</p>
 					<div class="footer-socials">
 						<div class="footer-social">f</div>
@@ -523,8 +523,8 @@ import Layout from '../layouts/Layout.astro';
 			<div class="footer-bottom">
 				<span>© 2026 DentalPure. All rights reserved.</span>
 				<div style="display:flex;gap:1.5rem;">
-					<a href="#" style="font-size:0.8rem;color:rgba(247,244,239,0.4);transition:color 0.25s;">Privacy</a>
-					<a href="#" style="font-size:0.8rem;color:rgba(247,244,239,0.4);transition:color 0.25s;">Terms</a>
+					<a href="#" class="footer-legal-link">Privacy</a>
+					<a href="#" class="footer-legal-link">Terms</a>
 				</div>
 			</div>
 		</div>
@@ -678,7 +678,7 @@ import Layout from '../layouts/Layout.astro';
 		gap: 0.5rem;
 		background: var(--cream);
 		border: 1px solid rgba(122,158,142,0.3);
-		color: var(--sage-dk);
+		color: #3d5c50;;
 		font-size: 0.78rem;
 		font-weight: 600;
 		letter-spacing: 0.1em;
@@ -720,7 +720,7 @@ import Layout from '../layouts/Layout.astro';
 		flex-wrap: wrap;
 	}
 	.btn-primary {
-		background: var(--sage);
+		background: #5a7d6d;
 		color: var(--white);
 		padding: 0.9rem 2rem;
 		border-radius: 2rem;
@@ -732,7 +732,7 @@ import Layout from '../layouts/Layout.astro';
 		gap: 0.5rem;
 		transition: background 0.25s, transform 0.25s;
 	}
-	.btn-primary:hover { background: var(--sage-dk); transform: translateY(-2px); }
+	.btn-primary:hover { background: #456056; transform: translateY(-2px); }
 	.btn-secondary {
 		color: var(--charcoal);
 		font-size: 0.92rem;
@@ -964,7 +964,7 @@ import Layout from '../layouts/Layout.astro';
 		border-radius: 1rem;
 		padding: 1.2rem;
 	}
-	.value-card h4 {
+	.value-card h3 {
 		font-size: 0.88rem;
 		font-weight: 600;
 		color: var(--charcoal);
@@ -1319,6 +1319,15 @@ import Layout from '../layouts/Layout.astro';
 		font-size: 0.8rem;
 		flex-wrap: wrap;
 		gap: 0.5rem;
+	}
+
+	.footer-bottom a {
+		font-size: 0.8rem;
+		color: rgba(247,244,239,0.6); /* era 0.4 */
+		transition: color 0.25s;
+	}
+	.footer-bottom a:hover {
+		color: var(--ivory);
 	}
 
 	/* ─── WHATSAPP BUTTON ─── */
