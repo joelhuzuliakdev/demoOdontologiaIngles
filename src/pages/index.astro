@@ -69,11 +69,19 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 		<div class="hero-right">
 			<div class="hero-image-wrap">
+				<!-- LCP image: eager + fetchpriority + webp -->
 				<img
 					class="hero-img"
-					src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900&q=80"
+					src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900&q=75&fm=webp"
+					srcset="
+						https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=75&fm=webp 600w,
+						https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900&q=75&fm=webp 900w,
+						https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200&q=75&fm=webp 1200w
+					"
+					sizes="(max-width: 1024px) 100vw, 50vw"
 					alt="Professional dentist"
-					loading="lazy"
+					loading="eager"
+					fetchpriority="high"
 				/>
 			</div>
 			<div class="hero-card">
@@ -142,13 +150,25 @@ import Layout from '../layouts/Layout.astro';
 			<div class="about-images reveal from-left">
 				<img
 					class="about-img-main"
-					src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&q=80"
+					src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&q=75&fm=webp"
+					srcset="
+						https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&q=75&fm=webp 400w,
+						https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&q=75&fm=webp 700w
+					"
+					sizes="(max-width: 600px) 400px, 700px"
 					alt="Modern dental clinic"
 					loading="lazy"
 				/>
+				<!-- srcset para servir el tamaño correcto según el tamaño visual real -->
 				<img
 					class="about-img-sec"
-					src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=500&q=80"
+					src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=400&q=75&fm=webp"
+					srcset="
+						https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=330&q=75&fm=webp 330w,
+						https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=400&q=75&fm=webp 400w,
+						https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=660&q=75&fm=webp 660w
+					"
+					sizes="(max-width: 600px) 330px, 400px"
 					alt="Dentist with patient"
 					loading="lazy"
 				/>
@@ -209,27 +229,27 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 			<div class="gallery-grid">
 				<div class="gallery-item reveal scale-up">
-					<img class="gallery-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&q=80" alt="Waiting room" loading="lazy"/>
+					<img class="gallery-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&q=75&fm=webp" alt="Waiting room" loading="lazy"/>
 					<div class="gallery-overlay"><span>Waiting room</span></div>
 				</div>
 				<div class="gallery-item reveal scale-up reveal-delay-1">
-					<img class="gallery-img" src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=500&q=80" alt="Treatment room" loading="lazy"/>
+					<img class="gallery-img" src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=500&q=75&fm=webp" alt="Treatment room" loading="lazy"/>
 					<div class="gallery-overlay"><span>Main treatment room</span></div>
 				</div>
 				<div class="gallery-item reveal scale-up reveal-delay-2">
-					<img class="gallery-img" src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&q=80" alt="Equipment" loading="lazy"/>
+					<img class="gallery-img" src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&q=75&fm=webp" alt="Equipment" loading="lazy"/>
 					<div class="gallery-overlay"><span>Digital equipment</span></div>
 				</div>
 				<div class="gallery-item reveal scale-up reveal-delay-3">
-					<img class="gallery-img" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&q=80" alt="Laboratory" loading="lazy"/>
+					<img class="gallery-img" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&q=75&fm=webp" alt="Laboratory" loading="lazy"/>
 					<div class="gallery-overlay"><span>Treatment room</span></div>
 				</div>
 				<div class="gallery-item reveal scale-up reveal-delay-1">
-					<img class="gallery-img" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=80" alt="Reception" loading="lazy"/>
+					<img class="gallery-img" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=75&fm=webp" alt="Reception" loading="lazy"/>
 					<div class="gallery-overlay"><span>Reception</span></div>
 				</div>
 				<div class="gallery-item reveal scale-up reveal-delay-2">
-					<img class="gallery-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=80" alt="Dental lab" loading="lazy"/>
+					<img class="gallery-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=75&fm=webp" alt="Dental lab" loading="lazy"/>
 					<div class="gallery-overlay"><span>Dental laboratory</span></div>
 				</div>
 			</div>
@@ -271,7 +291,7 @@ import Layout from '../layouts/Layout.astro';
 			<div class="reviews-grid">
 				<div class="review-card reveal">
 					<div class="reviewer">
-						<img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=47" alt="María G." loading="lazy"/>
+						<img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=47" alt="María G." loading="lazy" width="40" height="40"/>
 						<div>
 							<div class="reviewer-name">María González</div>
 							<div class="reviewer-date">2 weeks ago</div>
@@ -283,7 +303,7 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 				<div class="review-card reveal reveal-delay-1">
 					<div class="reviewer">
-						<img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=12" alt="Carlos M." loading="lazy"/>
+						<img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=12" alt="Carlos M." loading="lazy" width="40" height="40"/>
 						<div>
 							<div class="reviewer-name">Carlos Martínez</div>
 							<div class="reviewer-date">1 month ago</div>
@@ -295,7 +315,7 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 				<div class="review-card reveal reveal-delay-2">
 					<div class="reviewer">
-						<img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=25" alt="Laura P." loading="lazy"/>
+						<img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=25" alt="Laura P." loading="lazy" width="40" height="40"/>
 						<div>
 							<div class="reviewer-name">Laura Pérez</div>
 							<div class="reviewer-date">3 weeks ago</div>
@@ -307,7 +327,7 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 				<div class="review-card reveal reveal-delay-3">
 					<div class="reviewer">
-						<img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=33" alt="Roberto S." loading="lazy"/>
+						<img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=33" alt="Roberto S." loading="lazy" width="40" height="40"/>
 						<div>
 							<div class="reviewer-name">Roberto Suárez</div>
 							<div class="reviewer-date">2 months ago</div>
@@ -335,7 +355,7 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 			<div class="team-grid">
 				<div class="team-card reveal reveal-delay-1">
-					<img class="team-img" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80" alt="Dra. Ana Rodríguez" loading="lazy"/>
+					<img class="team-img" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=75&fm=webp" alt="Dra. Ana Rodríguez" loading="lazy"/>
 					<div class="team-info">
 						<div class="team-name">Dra. Ana Rodríguez</div>
 						<div class="team-role">Director · Implantology</div>
@@ -346,7 +366,7 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 				</div>
 				<div class="team-card reveal reveal-delay-2">
-					<img class="team-img" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80" alt="Dr. Marcos Torres" loading="lazy"/>
+					<img class="team-img" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=75&fm=webp" alt="Dr. Marcos Torres" loading="lazy"/>
 					<div class="team-info">
 						<div class="team-name">Dr. Marcos Torres</div>
 						<div class="team-role">Surgery & Periodontics</div>
@@ -357,7 +377,7 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 				</div>
 				<div class="team-card reveal reveal-delay-3">
-					<img class="team-img" src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80" alt="Dra. Valentina Cruz" loading="lazy"/>
+					<img class="team-img" src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=75&fm=webp" alt="Dra. Valentina Cruz" loading="lazy"/>
 					<div class="team-info">
 						<div class="team-name">Dra. Valentina Cruz</div>
 						<div class="team-role">Orthodontics & Aesthetics</div>
@@ -1579,13 +1599,19 @@ import Layout from '../layouts/Layout.astro';
 			});
 		}, 100);
 
+		const heroImg = document.querySelector('.hero-img');
+		let ticking = false;
+
 		// ── Parallax subtle on hero (solo desktop) ──
 		window.addEventListener('scroll', () => {
-			if (window.innerWidth > 1024) {
-				const heroImg = document.querySelector('.hero-img');
-				if (heroImg) {
-					heroImg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
-				}
+			if (!ticking) {
+				requestAnimationFrame(() => {
+					if (window.innerWidth > 1024 && heroImg) {
+						heroImg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+					}
+					ticking = false;
+				});
+				ticking = true;
 			}
 		});
 	});
